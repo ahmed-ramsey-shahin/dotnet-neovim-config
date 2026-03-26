@@ -6,3 +6,4 @@ vim.opt.shiftwidth = 4
 vim.opt.winbar = "%=%m %f"
 vim.opt.clipboard = ""
 vim.g.autoformat = false
+vim.opt.ruler = true
