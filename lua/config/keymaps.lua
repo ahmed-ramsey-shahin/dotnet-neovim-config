@@ -17,7 +17,8 @@ vim.keymap.set({ "n", "v" }, "<leader>p", [["+p]], { desc = "Paste from system c
 vim.keymap.set("n", "<leader>gs", "<cmd>Neogit<cr>", { desc = "Open neogit" });
 vim.keymap.set("n", "<leader>dr", "<cmd>Dotnet run<CR>", { desc = "Run the current dotnet project" })
 
-vim.keymap.set("i", "jk", "<ESC>", { noremap = true, silent = true })
+vim.keymap.set("t", "jk", "<ESC>", { noremap = true, silent = true })
+vim.keymap.set("t", "jk", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
 
 vim.keymap.set("n", "<A-i>", function()
     Snacks.terminal(nil, { cwd = LazyVim.root() })
