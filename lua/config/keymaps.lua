@@ -20,6 +20,12 @@ vim.keymap.set("n", "<leader>dr", "<cmd>Dotnet run<CR>", { desc = "Run the curre
 vim.keymap.set("t", "jk", "<ESC>", { noremap = true, silent = true })
 vim.keymap.set("t", "jk", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
 
+-- Disable arrow keys everywhere
+vim.keymap.set({'n', 'i', 'v'}, '<Up>', '<Nop>')
+vim.keymap.set({'n', 'i', 'v'}, '<Down>', '<Nop>')
+vim.keymap.set({'n', 'i', 'v'}, '<Left>', '<Nop>')
+vim.keymap.set({'n', 'i', 'v'}, '<Right>', '<Nop>')
+
 vim.keymap.set("n", "<A-i>", function()
     Snacks.terminal(nil, { cwd = LazyVim.root() })
 end, { desc = "Opens a terminal" })
