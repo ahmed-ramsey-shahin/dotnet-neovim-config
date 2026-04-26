@@ -29,3 +29,32 @@ vim.api.nvim_create_autocmd("CursorHold", {
 		vim.diagnostic.open_float(nil, { focusable = false })
 	end,
 })
+
+local theme_fixes = vim.api.nvim_create_augroup("ThemeFixes", { clear = true })
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+  group = theme_fixes,
+  pattern = { "vim", "darkblue", "default" },
+  callback = function()
+    local groups = {
+      "NormalFloat",
+      "FloatBorder",
+      "Pmenu",
+      "PmenuSel",
+      "PmenuSbar",
+      "PmenuThumb",
+      "MiniFilesNormal",
+      "MiniFilesBorder",
+    }
+    for _, group in ipairs(groups) do
+      vim.api.nvim_set_hl(0, group, { link = "Normal" })
+    end
+    vim.api.nvim_set_hl(0, "PmenuSel", { bg = "#444444", fg = "#FFFFFF", bold = true })
+    vim.api.nvim_set_hl(0, "MiniFilesTitle", { fg = "#FFFFFF", bold = true })
+  end,
+})
+
+local current = vim.g.colors_name or ""
+if current == "vim" or current == "darkblue" then
+    vim.api.nvim_exec_autocmds("ColorScheme", { pattern = current })
+end
