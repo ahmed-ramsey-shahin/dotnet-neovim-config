@@ -7,8 +7,8 @@ vim.keymap.del({ "n", "x" }, "<leader>cf")
 vim.keymap.del({ "n", "t" }, "<C-/>")
 vim.keymap.del("n", "<leader>ft")
 vim.keymap.del("n", "<leader>fT")
+vim.keymap.del("n", "<leader>dr")
 vim.keymap.del("n", "<leader>gs")
-vim.keymap.del("n", "<leader>dr");
 
 -- Custom keymaps
 vim.keymap.set("n", "<A-q>", "<CMD>bdelete<CR>", { desc = "Close the current buffer" })
